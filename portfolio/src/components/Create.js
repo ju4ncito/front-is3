@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { postTx } from "../api/Api";
 
 const options = [
   { key: "b", text: "Bought", value: "bought" },
@@ -15,19 +16,7 @@ export default function Create() {
     console.log(Number(price));
     console.log(nftstatus.toLowerCase());
 
-    const body = {
-      nft: nft,
-      price: Number(price),
-      status: nftstatus.toLowerCase(),
-    };
-
-    const res = await fetch("http://localhost:8080/transaction", {
-      method: "POST",
-      body: JSON.stringify(body),
-    });
-    console.log(res.status);
-    const data = await res.text();
-    console.log(data);
+    await postTx(nft, price, nftstatus);
   };
 
   const handleSubmit = (e) => {
@@ -38,7 +27,7 @@ export default function Create() {
   return (
     <form className="create-form" onSubmit={handleSubmit}>
       <div className="form-field">
-        <label for="nft">NFT</label>
+        <label htmlFor="nft">NFT</label>
         <input
           id="nft"
           name="nft"
@@ -49,7 +38,7 @@ export default function Create() {
         />
       </div>
       <div className="form-field">
-        <label for="price">Price</label>
+        <label htmlFor="price">Price</label>
         <input
           id="price"
           name="price"
@@ -61,7 +50,7 @@ export default function Create() {
         />
       </div>
       <div className="form-field">
-        <label for="status">Status</label>
+        <label htmlFor="status">Status</label>
         <select
           id="status"
           name="status"
