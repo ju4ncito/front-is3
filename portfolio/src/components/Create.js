@@ -1,4 +1,3 @@
-import { Button, Form } from "semantic-ui-react";
 import React, { useState } from "react";
 
 const options = [
@@ -37,33 +36,48 @@ export default function Create() {
   };
 
   return (
-    <Form className="create-form" onSubmit={handleSubmit}>
-      <Form.Field>
-        <label>NFT</label>
+    <form className="create-form" onSubmit={handleSubmit}>
+      <div className="form-field">
+        <label for="nft">NFT</label>
         <input
+          id="nft"
+          name="nft"
+          type="text"
           placeholder="NFT"
           value={nft}
           onChange={(e) => setNFT(e.target.value)}
         />
-      </Form.Field>
-      <Form.Field>
-        <label>Price</label>
+      </div>
+      <div className="form-field">
+        <label for="price">Price</label>
         <input
-          value={price}
+          id="price"
+          name="price"
           type="number"
           step="0.01"
           placeholder="Price"
+          value={price}
           onChange={(e) => setPrice(e.target.value)}
         />
-      </Form.Field>
-      <Form.Select
-        fluid
-        label="Status"
-        options={options}
-        placeholder="Status"
-        onChange={(e) => setStatus(e.target.textContent)}
-      />
-      <Button type="submit">Submit</Button>
-    </Form>
+      </div>
+      <div className="form-field">
+        <label for="status">Status</label>
+        <select
+          id="status"
+          name="status"
+          value={nftstatus}
+          onChange={(e) => setStatus(e.target.value)}
+        >
+          <option value="">Select status</option>
+          {options.map(({ key, text, value }) => (
+            <option key={key} value={value}>
+              {text}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
   );
 }

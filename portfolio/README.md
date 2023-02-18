@@ -1,26 +1,10 @@
 # Frontend - ISW3
 
-Codigo frontend de 'portfolio', que te permite agregar, editar y eliminar tus operaciones con activos NFT para saber el balance total de tu billetera.
+Codigo frontend de 'portfolio', que te permite agregar tus operaciones con activos NFT para saber el balance total de tu billetera.
 
-### Inicio
+CSS:
 
-Para comenzar a disenar la aplicacion, comence por un tutorial de CRUD dentro de react:
-
-`https://www.freecodecamp.org/news/how-to-perform-crud-operations-using-react/`
-
-Solo queda analizar las partes del mismo y adaptarlo a mis necesidades.
-
-Paquete utilizado para CSS:
-
-`npm install semantic-ui-react semantic-ui-css`
-
-Creamos la carpeta `components` en donde agregamos las siguientes files:
-
-- Create.js
-- Read.js
-- Update.js
-
-Empezamos a trabajar en `Create.js` - importamos las librerias necesarias para agregar un formulario y realizamos los distintos cambios en el CSS de `.main` y lo agregado en `Create.js` (modificando `index.css`)
+https://picocss.com/docs/ 
 
 ## Scripts
 
