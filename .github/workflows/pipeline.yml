@@ -13,6 +13,10 @@ env:
 jobs:
   unit-tests:
     runs-on: ubuntu-latest
+  
+    defaults:
+     run:
+      working-directory: ./portfolio
 
     steps:
       - name: Checkout
@@ -24,7 +28,7 @@ jobs:
           node-version: 18.x
 
       - name: Install packages
-        run: cd portfolio/ && npm i
+        run: npm ci
 
       - name: Run tests
         run: npm run test
