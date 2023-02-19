@@ -86,12 +86,9 @@ jobs:
 
       - name: Install Railway
         run: npm i -g @railway/cli
-        
-      - name: Set Railway service name
-        run: echo "RAILWAY_SERVICE_NAME=afraid-tiger" >> $GITHUB_ENV
 
       - name: Deploy
-        run: railway up & echo -ne '\r'
+        run: railway up -s afraid-tiger
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
           
