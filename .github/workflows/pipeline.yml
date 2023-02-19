@@ -56,7 +56,7 @@ jobs:
       - name: Build and Push to DockerHub
         uses: docker/build-push-action@v3
         with:
-          context: .
+          context: ./portfolio
           push: true
           tags: 0xsn4ke/portfolio-frontend:${{ github.run_number }}
 
