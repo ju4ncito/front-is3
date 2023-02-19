@@ -91,7 +91,7 @@ jobs:
         run: echo "RAILWAY_SERVICE_NAME=afraid-tiger" >> $GITHUB_ENV
 
       - name: Deploy
-        run: railway up 
+        run: railway up --yes
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
           
