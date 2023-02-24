@@ -21,8 +21,8 @@ describe("Create Component", () => {
     fireEvent.change(inputPrice, { target: { value: "10.99" } });
     fireEvent.change(selectStatus, { target: { value: "sold" } });
 
-    expect(inputNFT.value).toEqual("SFT");
-    expect(inputPrice.value).toEqual("15");
+    expect(inputNFT.value).toEqual("My NFT");
+    expect(inputPrice.value).toEqual("10.99");
     expect(selectStatus.value).toEqual("sold");
   });
 });
